@@ -8,7 +8,7 @@ export const ParkPreviewHTMLgenerator = (park) => {
   weather = useWeather();
 
   const weatherFunction = () => {
-    let weatherOutputArray = weather.map((date) => {
+    let weatherOutputArray = weather.slice(0,5).map((date) => {
       let day = date.dt;
       let milliseconds = day * 1000;
       let dateObject = new Date(milliseconds);
