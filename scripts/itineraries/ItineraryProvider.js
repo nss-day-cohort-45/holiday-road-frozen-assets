@@ -10,23 +10,23 @@ const dispatchStateChangeEvent = () => {
 }
 
 export const getItineraries = () => {
-    return fetch('http://localhost:8088/notes')
+    return fetch('http://localhost:8088/db')
         .then(response => response.json())
-        .then(parsedNotes => {
-            notes = parsedNotes
+        .then(parsedItineraries => {
+            itineraries = parsedItineraries
         })
 
 }
 
-export const saveNote = note => {
-    let stringifiedObj = JSON.stringify(note)
-    return fetch('http://localhost:8088/notes', {
+export const saveItineraries = itinerary => {
+    let stringifiedObj = JSON.stringify(itinerary)
+    return fetch('http://localhost:8088/db', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: stringifiedObj
     })
-    .then(getNotes)
+    .then(getItineraries)
     .then(dispatchStateChangeEvent)
 }
