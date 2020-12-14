@@ -21,4 +21,15 @@ const render = (parkArray) => {
   `;
 };
 
-//TODO: write change event handler
+eventHub.addEventListener('change', (evt) => {
+  if (!evt.target.id === 'parkDropdown') {
+    return;
+  }
+
+  const customEvent = new CustomEvent('parkChosen', {
+    detail: {
+      parkThatWasChosen: evt.target.value,
+    },
+  });
+  eventHub.dispatchEvent(customEvent);
+});
