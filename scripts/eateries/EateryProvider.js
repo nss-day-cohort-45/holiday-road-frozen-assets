@@ -8,6 +8,7 @@ export const getEateries = () => {
         .then(
             parsedEateries => {
                 eateries = parsedEateries;
+                console.log(eateries)
             }
         );
 };
