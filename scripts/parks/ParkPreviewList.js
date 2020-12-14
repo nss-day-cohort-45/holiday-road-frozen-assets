@@ -16,5 +16,5 @@ eventHub.addEventListener('parkChosen', (event) => {
     getWeather(chosenPark.latitude, chosenPark.longitude).then(() => {
       parkPreviewTarget.innerHTML = ParkPreviewHTMLgenerator(chosenPark);
     });
-  }
+  } else parkPreviewTarget.innerHTML = '';
 });
