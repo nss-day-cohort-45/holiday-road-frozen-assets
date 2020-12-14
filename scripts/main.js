@@ -1,9 +1,11 @@
-import { getParks } from "./parks/ParkProvider.js";
 import {getAttractions} from './attractions/AttractionProvider.js'
 import {attractionSelect} from './attractions/AttractionSelect.js'
+import { parkSelect } from "./parks/ParkSelect.js";
+import { getEateries } from "./eateries/EateryProvider.js";
 
-getParks();
 getAttractions()
 attractionSelect()
+parkSelect();
+getEateries();
 
 
