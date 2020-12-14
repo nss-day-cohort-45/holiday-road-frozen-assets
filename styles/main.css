@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Pacifico&display=swap');
+
+/* variables */
+ 
+:root {
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #c7bd80;
+  --primary-font-color: #000;
+  --heading-font-color: #000;
+  --dark-gray: #333;
+  --medium-gray: #888;
+  --light-gray: #aaa;
+  --primary-font: 'Asap', sans-serif;
+  --heading-font: 'Pacifico', cursive;
+}
+
+/* generic style reset */
+* {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-family: var(--primary-font);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.isHidden {
+  display: none;
+}
+
+/* typography */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+  color: var(--heading-font-color);
+}
+
+h1 {
+  font-size: 72px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+/* colors */
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-font-color);
+}
+
+/* structure & styling */
+.container {
+  margin: 0 1em;
+}
+
+.header {
+  width: 100%;
+  height: 170px;
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  max-height: 170px;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+  flex-wrap: wrap;
+}
+
+.dropdown-heading {
+  font-family: var(--heading-font);
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 0.25em;
+}
+
+.previews {
+  display: flex;
+  flex-direction: column;
+}
