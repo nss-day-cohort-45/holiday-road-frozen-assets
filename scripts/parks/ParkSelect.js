@@ -11,7 +11,7 @@ export const parkSelect = () => {
 };
 
 const render = (parkArray) => {
-  parkSelectTarget.innerHTML = `
+  parkSelectTarget.innerHTML += `
   <select class="dropdown" id="parkDropdown">
     <option value="0">Please select a National Park...</option>
     ${parkArray
