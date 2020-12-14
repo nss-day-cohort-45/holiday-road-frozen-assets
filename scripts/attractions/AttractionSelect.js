@@ -25,7 +25,7 @@ export const attractionSelect = () => {
 }
 
 const render = () => {
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML += `
         <select class="dropdown" id="attractionSelect">
             <option value="0">Please select an attraction...</option>
             ${
