@@ -37,6 +37,7 @@ export const ParkPreviewHTMLgenerator = (park) => {
 
   parkPreviewHTML = `
     <div class="preview-card preview-card--park">
+      <input type="hidden" id="selectedPark" value="${park.id}">
       <h4>
         ${park.fullName}
       </h4>
