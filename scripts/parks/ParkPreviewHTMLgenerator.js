@@ -37,6 +37,7 @@ export const ParkPreviewHTMLgenerator = (park) => {
 
   parkPreviewHTML = `
     <div class="preview-card preview-card--park">
+    <div class="preview-card--park__info">
       <input type="hidden" id="selectedPark" value="${park.id}">
       <h4>
         ${park.fullName}
@@ -46,6 +47,10 @@ export const ParkPreviewHTMLgenerator = (park) => {
     <div class="park-weather">
     ${weatherFunction()}
     </div>
+    </div>
+    <div class="detailButton">
+        <button class="parkDetails" id="parkDetailButton--${park.id}">Details</button>
+      </div>
     </div>
     `;
   return parkPreviewHTML;
