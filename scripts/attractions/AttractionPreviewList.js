@@ -8,19 +8,6 @@ eventHub.addEventListener("attractionSelect", () => {
   useAttractions()
 })
 
-// eventHub.addEventListener("attractionStateChanged", () => {
-//   useAttractions()
-// })
-
-
-// export const attractionList = () => {
-//   getAttractions()
-//       .then(() => {
-//           const allAttractions = useAttractions()
-//           render(allAttractions)
-//       })
-// }
-  
   
   eventHub.addEventListener("attractionChosen", event => {
     if(event.detail.attractionThatWasChosen !== "0") {
