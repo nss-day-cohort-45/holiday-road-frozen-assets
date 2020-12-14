@@ -1,7 +1,7 @@
 import { getItineraries, useItineraries } from "./ItineraryProvider.js";
 import { itineraryHTMLConverter } from "./Itinerary.js";
 
-const contentTarget = document.querySelector(".itineraryList")
+const contentTarget = document.querySelector(".content__saved-itineraries")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("itineraryStateChanged", () => {
