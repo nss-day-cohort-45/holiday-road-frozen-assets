@@ -1,3 +1,27 @@
 {
-	"itineraries": []
+  "itineraries": [
+    {
+      "eatery": "",
+      "id": 1
+    },
+    {
+      "eatery": "",
+      "id": 2
+    },
+    {
+      "park": "10",
+      "eatery": "",
+      "id": 3
+    },
+    {
+      "eatery": "",
+      "id": 4
+    },
+    {
+      "park": "",
+      "attraction": "",
+      "eatery": "",
+      "id": 5
+    }
+  ]
 }
