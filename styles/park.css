@@ -28,3 +28,39 @@
   color: #000;
   background-color: #999;
 }
+
+.park-dialog {
+  width: 70%;
+}
+
+.park-details h2 {
+  text-align: center;
+}
+
+.park-details__subcontainer {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;  
+}
+
+.park-details__contact {
+  margin-bottom: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.park-details__address {
+  text-align: left;
+}
+
+.park-details__closeButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.park-details__image img {
+  max-width: 300px;
+  border-radius: 1em;
+}
