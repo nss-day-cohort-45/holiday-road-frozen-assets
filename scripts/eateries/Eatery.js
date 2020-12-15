@@ -7,17 +7,3 @@ export const EateryHTMLConverter = (eatery) => {
         </section>`
 }
 
-const eventHub = document.querySelector(".dialog-container")
-
-eventHub.addEventListener("click", clickEvent => {
-    const [splitId, indexOne] = clickEvent.target.id.split("--")
-
-    if ("eateries" === splitId) {
-        const customEvent = new CustomEvent("showEateryClicked", {
-            detail: {
-                eateryThatWasChosen: indexOne
-            }
-        })
-        eventHub.dispatchEvent(customEvent)
-    }
-})
