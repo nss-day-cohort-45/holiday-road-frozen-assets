@@ -37,6 +37,16 @@
   text-align: center;
 }
 
+.park-details__location {
+  text-align: center;
+}
+
+.park-details__location,
+.park-details__description {
+  width: 85%;
+  margin: 0 auto;
+}
+
 .park-details__subcontainer {
   margin-top: 1em;
   display: flex;
