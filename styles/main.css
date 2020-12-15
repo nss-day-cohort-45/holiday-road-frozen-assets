@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap&family=Pacifico&display=swap');
 @import './attraction.css';
+@import './park.css';
 
 /* variables */
  
@@ -84,6 +85,10 @@ h3 {
 
 h4 {
   font-size: 24px;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 /* colors */
