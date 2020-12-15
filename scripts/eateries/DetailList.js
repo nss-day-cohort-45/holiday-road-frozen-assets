@@ -26,7 +26,7 @@ const render = (eatery) => {
     ${eatery.businessName}<br>
     Located in ${eatery.city}, ${eatery.state}.<br>
     ${eatery.description}<br>
-    Ameneties:
+    Amenities:
     <ul>
     <ul>Wheelchair Accesible? ${eatery.ameneties.wheelchairAccessible}</ul>
     <ul>Pet Friendly? ${eatery.ameneties.petFriendly}</ul>

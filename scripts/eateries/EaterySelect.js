@@ -2,7 +2,7 @@ import { getEateries, useEateries } from "./EateryProvider.js"
 
 
 const contentTarget = document.querySelector(".dropdowns__eateries")
-const eventHub = document.querySelector(".content")
+const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("change", event => {
     if (event.target.id === "eaterySelect") {

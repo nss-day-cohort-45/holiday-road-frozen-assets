@@ -1,6 +1,7 @@
 export const EateryHTMLConverter = (eatery) => {
     return `
         <section class="eatery-info">
+        <input type="hidden" id="selectedEatery" value="${eatery.id}">
         <div class="eatery__name">${eatery.businessName}</div>
         <div class="eatery__location">Located in ${eatery.city}, ${eatery.state}</div>
         <button id="eateries--${eatery.id}">Details</button>
