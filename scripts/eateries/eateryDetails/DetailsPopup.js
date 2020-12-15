@@ -1,16 +1,15 @@
 export const eateryDetailsPopupConverter = (eatery) => {
-    return `<dialog open class="eatery__details">
+    return `<div>
     ${eatery.businessName}
     ${eatery.description}
     Located in ${eatery.city}, ${eatery.state}.
-    Amenities:
     Wheelchair Accesible? ${eatery.amenities.wheelchairAccessible}
     Pet Friendly? ${eatery.amenities.petFriendly}
     Wifi? ${eatery.amenities.wifi}
     Diaper Facility? ${eatery.amenities.diaperFacility}
     Playground? ${eatery.amenities.playground}
     Restrooms? ${eatery.ameities.restrooms}
-    </dialog>`
+    </div>`
     
 }
 

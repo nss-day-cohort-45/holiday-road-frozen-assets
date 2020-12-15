@@ -1,4 +1,4 @@
-import { getEateries, useEateries } from "./EateryProvider.js"
+import { useEateries } from "./EateryProvider.js"
 import { EateryHTMLConverter } from "./Eatery.js"
 
 const contentTarget = document.querySelector(".preview--eatery")
