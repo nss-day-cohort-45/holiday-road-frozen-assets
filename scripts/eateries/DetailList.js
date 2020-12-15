@@ -11,7 +11,7 @@ eventHub.addEventListener('showDetailsClicked', event => {
 
         contentTarget.innerHTML = (render(chosenEatery))
 
-        var dialog = document.querySelector('.eateryDialog')
+        let dialog = document.querySelector('.eateryDialog')
     document.querySelector('.close').onclick = function() {
         dialog.close()
         render(chosenEatery)
@@ -26,12 +26,15 @@ const render = (eatery) => {
     ${eatery.businessName}<br>
     Located in ${eatery.city}, ${eatery.state}.<br>
     ${eatery.description}<br>
-    Wheelchair Accesible? ${eatery.ameneties.wheelchairAccessible}<br>
-    Pet Friendly? ${eatery.ameneties.petFriendly}<br>
-    Wifi? ${eatery.ameneties.wifi}<br>
-    Diaper Facility? ${eatery.ameneties.diaperFacility}<br>
-    Playground? ${eatery.ameneties.playground}<br>
-    Restrooms? ${eatery.ameneties.restrooms}<br>
+    Ameneties:
+    <ul>
+    <ul>Wheelchair Accesible? ${eatery.ameneties.wheelchairAccessible}</ul>
+    <ul>Pet Friendly? ${eatery.ameneties.petFriendly}</ul>
+    <ul>Wifi? ${eatery.ameneties.wifi}</ul>
+    <ul>Diaper Facility? ${eatery.ameneties.diaperFacility}</ul>
+    <ul>Playground? ${eatery.ameneties.playground}</ul>
+    <ul>Restrooms? ${eatery.ameneties.restrooms}</ul>
+    <ul>
     <button class="close">Close</button>
     </dialog>`
     
