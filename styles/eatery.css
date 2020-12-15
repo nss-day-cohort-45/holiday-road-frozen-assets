@@ -1,0 +1,18 @@
+.eatery-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    border: 1px solid black;
+    text-align: left;
+  }
+  
+  
+  .detailButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .eateryDialog {
+    margin-left: 8%;
+  }
