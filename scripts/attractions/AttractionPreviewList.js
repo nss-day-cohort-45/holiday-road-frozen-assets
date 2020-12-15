@@ -32,3 +32,17 @@ eventHub.addEventListener("attractionSelect", () => {
       }
       attractionElement.innerHTML = attractionCards.join("")
     }
+
+    eventHub.addEventListener('click', (clickEvent)=> {
+      if (!clickEvent.target.id.startsWith('attractionDetailButton--')) {
+        return;
+      }
+      const [unused, attractionId] = clickEvent.target.id.split('--');
+    
+      const customEvent = new CustomEvent('attractionDetailClicked', {
+        detail: {
+          attractionId: attractionId
+        }
+      })
+      eventHub.dispatchEvent(customEvent);
+    })
