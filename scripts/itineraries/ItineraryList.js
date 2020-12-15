@@ -12,11 +12,6 @@ let attractions = []
 let eateries = []
 let itineraryCollection = []
 
-// Get 3 IDs. Somehow.
-// Save IDs to object in db.
-// Convert each object to HTML representation
-// List in DOM
-
 eventHub.addEventListener("itineraryStateChanged", () => {
   itineraryList()
 })
@@ -53,36 +48,47 @@ const getParkObject = (park) => {
 }
 
 const getAttractionObject = (attraction) => {
-  const matchingAttraction = attractions.find(it => attraction.attractionID === it.id)
+  const matchingAttraction = attractions.find(it => parseInt(attraction.attractionID) === it.id)
   return matchingAttraction
 }
 
 const getEateryObject = (eatery) => {
-  const matchingEatery = eateries.find(it => eatery.eateryID === it.id)
+  const matchingEatery = eateries.find(it => parseInt(eatery.eateryID) === it.id)
   return matchingEatery
 }
 
+const buttonStatus = {
+  isParkChosen: false,
+  isAttractionChosen: false,
+  isEateryChosen: false
+}
 
-eventHub.addEventListener('parkChosen', event => {
-  if (event.detail.parkThatWasChosen!=="0"){
-    park = event.detail.parkThatWasChosen.value
+const buttonEnabler = () => {
+  if (buttonStatus.isParkChosen && buttonStatus.isAttractionChosen && buttonStatus.isEateryChosen) {
+    document.querySelector("#saveItinerary").disabled = false
   }
+}
+
+eventHub.addEventListener("parkChosen", () => {
+  buttonStatus.isParkChosen = true
+  buttonEnabler()
 })
 
-eventHub.addEventListener('attractionChosen', event => {
-  if (event.detail.eateryThatWasChosen!=="0"){
-    attraction = event.detail.attractionThatWasChosen.value
-  }
+eventHub.addEventListener("attractionChosen", () => {
+  buttonStatus.isAttractionChosen = true
+  buttonEnabler()
 })
 
-eventHub.addEventListener('eateryChosen', event => {
-  if (event.detail.eateryThatWasChosen!=="0"){
-    eatery = event.detail.eateryThatWasChosen.value
-  }
+eventHub.addEventListener("eateryChosen", () => {
+  buttonStatus.isEateryChosen = true
+  buttonEnabler()
 })
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "saveItinerary") {
+    const park = document.querySelector("#selectedPark").value
+    const attraction = document.querySelector("#selectedAttraction").value
+    const eatery = document.querySelector("#selectedEatery").value
       const newItinerary = {
           parkID: park,
           attractionID: attraction,

@@ -2,7 +2,7 @@ import { useEateries } from "./EateryProvider.js"
 import { EateryHTMLConverter } from "./Eatery.js"
 
 const contentTarget = document.querySelector(".preview--eatery")
-const eventHub = document.querySelector(".content")
+const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener('eateryChosen', event => {
     if (event.detail.eateryThatWasChosen !== "0") {
