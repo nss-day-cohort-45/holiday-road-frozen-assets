@@ -1,4 +1,11 @@
 export const ParkDetailsHTMLgenerator = (park) => {
+  const randomInt = () => {
+    let arrayLength = park.images.length;
+    return Math.floor(Math.random() * Math.floor(arrayLength))
+  }
+
+  let imageNumber = randomInt();
+
   return `
   <div class="park-details">
     <h2>${park.fullName}</h2>
@@ -22,7 +29,7 @@ export const ParkDetailsHTMLgenerator = (park) => {
     <p>${park.addresses[0].city}, ${park.addresses[0].stateCode} ${park.addresses[0].postalCode}</p>
     </div>
     <div class="park-details__image">
-      <img src="${park.images[0].url}" alt="${park.images[0].altText}">
+      <img src="${park.images[imageNumber].url}" alt="${park.images[imageNumber].altText}">
     </div>
     </div>
     </div>
