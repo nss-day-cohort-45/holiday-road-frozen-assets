@@ -1,27 +1,28 @@
 {
   "itineraries": [
     {
-      "eatery": "",
+      "parkID": "6",
+      "attractionID": "6",
+      "eateryID": "",
       "id": 1
     },
     {
-      "eatery": "",
+      "parkID": "",
+      "attractionID": "",
+      "eateryID": "",
       "id": 2
     },
     {
-      "park": "10",
-      "eatery": "",
+      "parkID": "",
+      "attractionID": "",
+      "eateryID": "",
       "id": 3
     },
     {
-      "eatery": "",
+      "parkID": "",
+      "attractionID": "",
+      "eateryID": "",
       "id": 4
-    },
-    {
-      "park": "",
-      "attraction": "",
-      "eatery": "",
-      "id": 5
     }
   ]
 }

@@ -1,9 +1,9 @@
-export const itineraryHTMLConverter = (itineraryObject) => {
+export const itineraryHTMLConverter = (park, attraction, eatery) => {
   return `
       <section class="itinerary">
-          <div class="itinerary__park">Park: ${ itineraryObject.park }</div>
-          <div class="itinerary__attraction">Attraction: ${ itineraryObject.attraction }</div>
-          <div class="itinerary__eatery">Restaurant: ${ itineraryObject.eatery }</div>
+          <div class="itinerary__park">Park: ${park.name}</div>
+          <div class="itinerary__attraction">Attraction: ${attraction.name}</div>
+          <div class="itinerary__eatery">Restaurant: ${eatery.name}</div>
       </section>
   `
 }
