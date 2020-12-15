@@ -6,7 +6,7 @@ import { itineraryList } from "./itineraries/ItineraryList.js";
 import './parks/ParkPreviewList.js';
 import "./attractions/AttractionPreviewList.js"
 import "./eateries/EateryPreviewList.js"
-import "./eateries/eateryDetails/DetailList.js"
+import "./eateries/DetailList.js"
 
 attractionSelect();
 parkSelect();

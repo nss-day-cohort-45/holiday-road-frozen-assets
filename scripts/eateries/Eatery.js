@@ -7,3 +7,17 @@ export const EateryHTMLConverter = (eatery) => {
         </section>`
 }
 
+const eventHub = document.querySelector(".preview--eatery")
+
+eventHub.addEventListener("click", clickEatery => {
+    const [splitId, indexOne] = clickEatery.target.id.split("--")
+
+    if ("eateries" === splitId) {
+        const customEventEatery = new CustomEvent("showDetailsClicked", {
+            detail: {
+                eateryThatWasChosen: indexOne
+            }
+        })
+        eventHub.dispatchEvent(customEventEatery)
+    }
+})
