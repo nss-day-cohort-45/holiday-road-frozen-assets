@@ -1,0 +1,13 @@
+aside {
+  background-color:  #c7bd80;
+  border: 3px black;
+}
+
+.content{
+  display: flex;
+} 
+
+.itinerary{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

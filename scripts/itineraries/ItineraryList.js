@@ -1,10 +1,10 @@
-import { useAttractions } from "../attractions/AttractionProvider.js"
-import { useParks } from "../parks/ParkProvider.js"
-import { useEateries } from "../eateries/EateryProvider.js"
+import { getAttractions, useAttractions } from "../attractions/AttractionProvider.js"
+import { getParks, useParks } from "../parks/ParkProvider.js"
+import { getEateries, useEateries } from "../eateries/EateryProvider.js"
 import { getItineraries, useItineraries, saveItineraries } from "./ItineraryProvider.js";
 import { itineraryHTMLConverter } from "./Itinerary.js";
 
-const contentTarget = document.querySelector(".content__saved-itineraries")
+const contentTarget = document.querySelector(".content__saved-itineraries-content")
 const eventHub = document.querySelector(".container")
 
 let parks = []
@@ -23,12 +23,10 @@ eventHub.addEventListener("itineraryStateChanged", () => {
 
 const render = (itineraryCollection) => {
     contentTarget.innerHTML = itineraryCollection.map(itinerary => {
-      const parkRelationshipObject = getParkRelationships(itinerary)
-      const attractionRelationshipObject = getAttractionRelationships(itinerary)
-      const eateryRelationshipObject = getEateryRelationships(itinerary)
-      const parkObjects = convertParkIds(parkRelationshipObject)
-      const attractionObjects = convertAttractionIds(attractionRelationshipObject)
-      const eateryObjects = convertEateryIds(eateryRelationshipObject)
+      const parkObject = getParkObject(itinerary)
+      const attractionObject = getAttractionObject(itinerary)
+      const eateryObject = getEateryObject(itinerary)
+      console.log(parkObject, attractionObject, eateryObject)
       const html = itineraryHTMLConverter(parkObject, attractionObject, eateryObject)
       return html
     }).join("")
@@ -36,6 +34,9 @@ const render = (itineraryCollection) => {
 
 export const itineraryList = () => {
     getItineraries()
+        .then(getParks)
+        .then(getAttractions)
+        .then(getEateries)
         .then(() => {
             parks = useParks()
             attractions = useAttractions()
@@ -46,64 +47,39 @@ export const itineraryList = () => {
         })
 }
 
-const getParkRelationships = (park) => {
-  const relatedParks = parks.find(it => it.parkID === park.id)
-  return relatedParks
+const getParkObject = (park) => {
+  const matchingPark = parks.find(it => park.parkID === it.id)
+  return matchingPark
 }
 
-const getAttractionRelationships = (attraction) => {
-  const relatedAttractions = attractions.find(it => it.attractionID === attraction.id)
-  return relatedAttractions
+const getAttractionObject = (attraction) => {
+  const matchingAttraction = attractions.find(it => attraction.attractionID === it.id)
+  return matchingAttraction
 }
 
-const getEateryRelationships = (eatery) => {
-  const relatedEateries = eateries.find(it => it.eateryID === eatery.id)
-  return relatedEateries
+const getEateryObject = (eatery) => {
+  const matchingEatery = eateries.find(it => eatery.eateryID === it.id)
+  return matchingEatery
 }
 
-const convertParkIds = (relationships) => {
-  const parkObject = relationships.map(rp => {
-    return parks.find(park => park.id === rp.parkID)
-  })
-  return parkObject
-}
 
-const convertAttractionIds = (relationships) => {
-  const attractionObject = relationships.map(ra => {
-    return attractions.find(attraction => attraction.id === ra.attractionID)
-  })
-  return attractionObject
-}
+eventHub.addEventListener('parkChosen', event => {
+  if (event.detail.parkThatWasChosen!=="0"){
+    park = event.detail.parkThatWasChosen.value
+  }
+})
 
-const convertEateryIds = (relationships) => {
-  const eateryObject = relationships.map(re => {
-    return eateries.find(eatery => eatery.id === re.eateryID)
-  })
-  return eateryObject
-}
+eventHub.addEventListener('attractionChosen', event => {
+  if (event.detail.eateryThatWasChosen!=="0"){
+    attraction = event.detail.attractionThatWasChosen.value
+  }
+})
 
-let park = ""
-let attraction = ""
-let eatery = ""
-
-// eventHub.addEventListener('parkChosen', event => {
-//   if (event.detail.parkThatWasChosen!=="0"){
-//     park = event.detail.parkThatWasChosen
-//   }
-// })
-
-// eventHub.addEventListener('attractionChosen', event => {
-//   if (event.detail.eateryThatWasChosen!=="0"){
-//     attraction = event.detail.attractionThatWasChosen
-//   }
-// })
-
-// eventHub.addEventListener('eateryChosen', event => {
-//   if (event.detail.eateryThatWasChosen!=="0"){
-//     eatery = event.detail.eateryThatWasChosen
-//   }
-// })
-
+eventHub.addEventListener('eateryChosen', event => {
+  if (event.detail.eateryThatWasChosen!=="0"){
+    eatery = event.detail.eateryThatWasChosen.value
+  }
+})
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "saveItinerary") {
@@ -116,3 +92,4 @@ eventHub.addEventListener("click", clickEvent => {
       saveItineraries(newItinerary)
   }
 })
+
