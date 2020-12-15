@@ -22,14 +22,12 @@ const render = (parkArray) => {
 };
 
 eventHub.addEventListener('change', (evt) => {
-  if (!evt.target.id === 'parkDropdown') {
-    return;
+  if (evt.target.id === 'parkDropdown') {
+    const customEvent = new CustomEvent('parkChosen', {
+      detail: {
+        parkThatWasChosen: evt.target.value,
+      },
+    });
+    eventHub.dispatchEvent(customEvent);
   }
-
-  const customEvent = new CustomEvent('parkChosen', {
-    detail: {
-      parkThatWasChosen: evt.target.value,
-    },
-  });
-  eventHub.dispatchEvent(customEvent);
 });
