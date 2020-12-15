@@ -15,20 +15,3 @@ export const getAttractions = () => {
 export const useAttractions = () => attractions.slice()
 
 
-// const dispatchStateChangeEvent = () => {
-//   const attractionStateChangedEvent = new CustomEvent("attractionStateChanged")
-
-//   eventHub.dispatchEvent(attractionStateChangedEvent)
-// }
-
-// export const saveTrip = trip => {
-//   return fetch('http://localhost:8088/db', {
-//       method: "POST",
-//       headers: {
-//           "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(trip)
-//   })
-//   .then(getAttractions)
-//   .then(dispatchStateChangeEvent)
-// }

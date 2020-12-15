@@ -3,11 +3,11 @@ export const attractionHTMLConverter = (attractionObject) => {
   <div class="attractionContainer">
       <section class="attraction">
       <input type="hidden" id="selectedAttraction" value="${attractionObject.id}">
-          <div class="attractionName">Name: ${ attractionObject.name }</div>
-          <div class="attractionLocation">Location: ${attractionObject.city}, ${attractionObject.state}</div>
+          <h4 class="attractionName">${ attractionObject.name }</h4>
+          <p class="attractionLocation">${attractionObject.city}, ${attractionObject.state}</p>
       </section>
-      <div class="detailButton" id="attractionDetailButton--id">
-        <button class="attractionDetails">Details</button>
+      <div class="detailButton" >
+        <button id="attractionDetailButton--${attractionObject.id}" class="attractionDetails">Details</button>
       </div>
   </div>
   `
