@@ -23,6 +23,12 @@ eventHub.addEventListener('click', (clickEvent)=> {
   if (!clickEvent.target.id.startsWith('parkDetailButton--')) {
     return;
   }
+  const [unused, parkId] = clickEvent.target.id.split('--');
 
-  const customEvent = new CustomEvent('parkDetailClicked')
+  const customEvent = new CustomEvent('parkDetailClicked', {
+    detail: {
+      parkId: parkId
+    }
+  })
+  eventHub.dispatchEvent(customEvent);
 })
