@@ -8,7 +8,7 @@ export const ParkPreviewHTMLgenerator = (park) => {
   weather = useWeather();
 
   const weatherFunction = () => {
-    let weatherOutputArray = weather.slice(0,5).map((date) => {
+    let weatherOutputArray = weather.slice(0, 5).map((date) => {
       let day = date.dt;
       let milliseconds = day * 1000;
       let dateObject = new Date(milliseconds);
@@ -22,14 +22,14 @@ export const ParkPreviewHTMLgenerator = (park) => {
       let low = date.temp.min;
       let high = date.temp.max;
       let desc = date.weather[0].description;
+      let img = date.weather[0].icon;
 
-      return `<div>
+      return `<div class="weather-card">
       <p>${humanDate}</p>
-      <ul>
-      <li>Hi: ${high}</li>
-      <li>Lo: ${low}</li>
-      <li>${desc}</li>
-      </ul>
+      <p>Hi: ${high}&deg; F</p>
+      <p>Lo: ${low}&deg; F</p>
+      <p>${desc}</p>
+      <img src="http://openweathermap.org/img/wn/${img}@2x.png">
       </div>`;
     });
     return weatherOutputArray.join('');
@@ -49,7 +49,9 @@ export const ParkPreviewHTMLgenerator = (park) => {
     </div>
     </div>
     <div class="detailButton">
-        <button class="parkDetails" id="parkDetailButton--${park.id}">Details</button>
+        <button class="parkDetails" id="parkDetailButton--${
+          park.id
+        }">Details</button>
       </div>
     </div>
     `;
