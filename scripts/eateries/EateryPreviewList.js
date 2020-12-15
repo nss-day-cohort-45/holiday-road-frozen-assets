@@ -10,6 +10,9 @@ eventHub.addEventListener('eateryChosen', event => {
         const matchingEatery = eateries.find((eatery) => eatery.id === parseInt(event.detail.eateryThatWasChosen))
         render(matchingEatery)
     }
+    else {
+        contentTarget.innerHTML = ''
+    }
 })
 
 const render = (eateries) => {
