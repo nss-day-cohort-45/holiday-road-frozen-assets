@@ -26,7 +26,6 @@ const render = (itineraryCollection) => {
       const parkRelationshipObject = getParkRelationships(itinerary)
       const attractionRelationshipObject = getAttractionRelationships(itinerary)
       const eateryRelationshipObject = getEateryRelationships(itinerary)
-      console.log(eateryRelationshipObject)
       const parkObjects = convertParkIds(parkRelationshipObject)
       const attractionObjects = convertAttractionIds(attractionRelationshipObject)
       const eateryObjects = convertEateryIds(eateryRelationshipObject)
