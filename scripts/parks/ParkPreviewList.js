@@ -18,3 +18,11 @@ eventHub.addEventListener('parkChosen', (event) => {
     });
   } else parkPreviewTarget.innerHTML = '';
 });
+
+eventHub.addEventListener('click', (clickEvent)=> {
+  if (!clickEvent.target.id.startsWith('parkDetailButton--')) {
+    return;
+  }
+
+  const customEvent = new CustomEvent('parkDetailClicked')
+})
