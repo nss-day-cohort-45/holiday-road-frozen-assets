@@ -65,6 +65,11 @@ select {
   display: none;
 }
 
+.lightbg {
+  background-color: #999999;
+  border-radius: 10px;
+}
+
 /* typography */
 h1,
 h2,
