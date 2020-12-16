@@ -10,6 +10,6 @@ export const EateryDetailsConverter = (eatery) => {
     <p class="eatery__changingRoom">Diaper Facility? ${eatery.ameneties.diaperFacility}</p>
     <p class="eatery__playground">Playground? ${eatery.ameneties.playground}</p>
     <p class="eatery__restrooms">Restrooms? ${eatery.ameneties.restrooms}</p>
-    <button class="close" id="closeModal">Close</button>
+    <div class="close"><button class="close" id="closeModal">Close</button></div>
     `
   }
