@@ -4,7 +4,6 @@ const eventHub = document.querySelector('.container');
 export const ParkPreviewHTMLgenerator = (park) => {
   let weather = [];
   let parkPreviewHTML;
-
   weather = useWeather();
 
   const weatherFunction = () => {
@@ -21,7 +20,6 @@ export const ParkPreviewHTMLgenerator = (park) => {
       let humanDate = dateObject.toLocaleDateString('en-us', dateOptions);
       let low = date.temp.min;
       let high = date.temp.max;
-      let desc = date.weather[0].description;
       let img = date.weather[0].icon;
 
       return `<div class="weather-card">
@@ -38,6 +36,14 @@ export const ParkPreviewHTMLgenerator = (park) => {
     return weatherOutputArray.join('');
   };
 
+  const weatherDisplay = (lat, long) => {
+    if (lat && long !== '') {
+      return weatherFunction();
+    } else {
+      return 'No Weather Information Available';
+    }
+  };
+
   parkPreviewHTML = `
     <div class="preview-card preview-card--park">
       <div class="preview-card--park__info">
@@ -46,11 +52,13 @@ export const ParkPreviewHTMLgenerator = (park) => {
           <h4>
             ${park.fullName}
           </h4>
-          <p class="bold">${park.addresses[0].city}, ${park.addresses[0].stateCode}</p>
+          <p class="bold">${park.addresses[0].city}, ${
+    park.addresses[0].stateCode
+  }</p>
         </div>
       </div>
       <div class="park-weather">
-        ${weatherFunction()}
+        ${weatherDisplay(park.latitude, park.longitude)}
       </div>
       <div class="detailButton">
         <button class="parkDetails" id="parkDetailButton--${

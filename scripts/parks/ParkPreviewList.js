@@ -13,13 +13,17 @@ eventHub.addEventListener('parkChosen', (event) => {
       (park) => park.id === event.detail.parkThatWasChosen
     );
 
-    getWeather(chosenPark.latitude, chosenPark.longitude).then(() => {
+    if (chosenPark.latitude && chosenPark.longitude !== '') {
+      getWeather(chosenPark.latitude, chosenPark.longitude).then(() => {
+        parkPreviewTarget.innerHTML = ParkPreviewHTMLgenerator(chosenPark);
+      });
+    } else {
       parkPreviewTarget.innerHTML = ParkPreviewHTMLgenerator(chosenPark);
-    });
+    }
   } else parkPreviewTarget.innerHTML = '';
 });
 
-eventHub.addEventListener('click', (clickEvent)=> {
+eventHub.addEventListener('click', (clickEvent) => {
   if (!clickEvent.target.id.startsWith('parkDetailButton--')) {
     return;
   }
@@ -27,8 +31,8 @@ eventHub.addEventListener('click', (clickEvent)=> {
 
   const customEvent = new CustomEvent('parkDetailClicked', {
     detail: {
-      parkId: parkId
-    }
-  })
+      parkId: parkId,
+    },
+  });
   eventHub.dispatchEvent(customEvent);
-})
+});
