@@ -8,5 +8,11 @@
   }
     
   .eateryDialog {
+    display: flex;
+    flex-direction: column;
     margin-left: 8%;
+  }
+
+  .eateryName, .eateryLocation, .eateryDescription, .eateryAmenities, .eatery__Wheelchair, .eatery__pets, .eatery__wifi, .eatery__changingRoom, .eatery__playground, .eatery__restrooms, .close {
+    text-align: center;
   }

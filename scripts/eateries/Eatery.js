@@ -1,4 +1,4 @@
-export const EateryHTMLConverter = (eatery) => {
+export const eateryConverter = (eatery) => {
     return `
         <section class="eatery-info">
         <input type="hidden" id="selectedEatery" value="${eatery.id}">
