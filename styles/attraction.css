@@ -17,4 +17,22 @@
 
 .attractionDetails {
   margin-right: 20px;
+
+}
+
+.attraction-details__name {
+  text-align: center;
+}
+
+.attraction-details__location {
+  text-align: center;
+}
+
+
+.dialog-container {
+  width: 70%;
+}
+
+.attraction-details__ameneties, .attraction-details__amenitiesSouvenirs, .attraction-details__amenitiesRestrooms {
+  text-align: center;
 }
