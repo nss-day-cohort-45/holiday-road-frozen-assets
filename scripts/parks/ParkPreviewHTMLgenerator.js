@@ -48,9 +48,9 @@ export const ParkPreviewHTMLgenerator = (park) => {
           </h4>
           <p class="bold">${park.addresses[0].city}, ${park.addresses[0].stateCode}</p>
         </div>
-        <div class="park-weather">
-          ${weatherFunction()}
-        </div>
+      </div>
+      <div class="park-weather">
+        ${weatherFunction()}
       </div>
       <div class="detailButton">
         <button class="parkDetails" id="parkDetailButton--${

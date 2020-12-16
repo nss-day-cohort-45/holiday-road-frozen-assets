@@ -1,6 +1,7 @@
 .preview-card--park {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 20px 0;
   border: 1px solid black;
 }
@@ -18,7 +19,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 2em;
 }
 
 .weather-card {
