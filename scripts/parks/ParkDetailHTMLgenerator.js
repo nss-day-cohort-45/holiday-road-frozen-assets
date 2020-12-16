@@ -14,7 +14,7 @@ export const ParkDetailsHTMLgenerator = (park) => {
     <div class="park-details__subcontainer">
     <div class="park-details__activities">
     <h4>Activities: </h4>
-    <div>
+    <div class="park-details__activitiesList">
       ${park.activities.map((activity)=>{
         return `<p>${activity.name}</p>`
       }).join('')}

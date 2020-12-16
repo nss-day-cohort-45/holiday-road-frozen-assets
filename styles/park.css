@@ -64,6 +64,13 @@
   justify-content: space-evenly;  
 }
 
+.park-details__activitiesList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 30em;
+}
+
 .park-details__contact {
   margin-bottom: 2em;
   text-align: center;
