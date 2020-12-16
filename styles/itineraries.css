@@ -1,6 +1,13 @@
 aside {
-  background-color:  #c7bd80;
-  border: 3px black;
+  background-color:  var(--secondary-bg-color);
+  height: 100vh;
+  border-left: 3px solid rgb(109, 94, 30);
+  padding: 1em;
+  margin-left: 2em;
+}
+
+aside h4 {
+  text-align: center;
 }
 
 .content{

@@ -117,11 +117,24 @@ body {
   max-height: 170px;
 }
 
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__main {
+  margin: 0 auto;
+}
+
 .dropdowns {
   display: flex;
   justify-content: space-around;
   margin-top: 1em;
   flex-wrap: wrap;
+}
+
+.dropdowns > div {
+  margin: 0 1.5em;
 }
 
 .dropdown-heading {
@@ -134,4 +147,10 @@ body {
 .previews {
   display: flex;
   flex-direction: column;
+}
+
+.button-container {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
 }
