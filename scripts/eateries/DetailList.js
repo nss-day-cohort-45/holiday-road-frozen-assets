@@ -1,42 +1,23 @@
-import { useEateries } from "./EateryProvider.js";
+import { EateryDetailsConverter } from './DetailsConverter.js';
+import { useEateries } from './EateryProvider.js';
 
-const eventHub = document.querySelector(".preview--eatery")
-const contentTarget = document.querySelector(".preview__eateryDialog")
+const eventHub = document.querySelector('.container');
+const contentTarget = document.querySelector('.dialog-container');
 
-eventHub.addEventListener('showDetailsClicked', event => {
-    if (event.detail.eateryThatWasChosen !== "0") {
+eventHub.addEventListener('eateryDetailsClicked', (event) => {
+  const eateries = useEateries();
+  const eateryDetails = event.detail.eateryId;
+  const eateryObject = eateries.find((eatery)=>eatery.id === parseInt(eateryDetails));
+  
+  const eateryHTML = EateryDetailsConverter(eateryObject);
+  contentTarget.innerHTML = eateryHTML;
+  contentTarget.classList.add('eatery-dialog');
+  contentTarget.showModal();
+});
 
-        const eateries = useEateries()
-        const chosenEatery = eateries.find((eatery) => eatery.id === parseInt(event.detail.eateryThatWasChosen))
-
-        contentTarget.innerHTML = (render(chosenEatery))
-
-        let dialog = document.querySelector('.eateryDialog')
-    document.querySelector('.close').onclick = function() {
-        dialog.close()
-        render(chosenEatery)
-    }
-    }
-    
-}
-)
-
-const render = (eatery) => {
-    return `<dialog open class="eateryDialog">
-    ${eatery.businessName}<br>
-    Located in ${eatery.city}, ${eatery.state}.<br>
-    ${eatery.description}<br>
-    Amenities:
-    <ul>
-    <ul>Wheelchair Accesible? ${eatery.ameneties.wheelchairAccessible}</ul>
-    <ul>Pet Friendly? ${eatery.ameneties.petFriendly}</ul>
-    <ul>Wifi? ${eatery.ameneties.wifi}</ul>
-    <ul>Diaper Facility? ${eatery.ameneties.diaperFacility}</ul>
-    <ul>Playground? ${eatery.ameneties.playground}</ul>
-    <ul>Restrooms? ${eatery.ameneties.restrooms}</ul>
-    <ul>
-    <button class="close">Close</button>
-    </dialog>`
-    
-    
-}
+eventHub.addEventListener('click', (event)=> {
+  if (event.target.id === 'closeModal') {
+    contentTarget.close();
+    contentTarget.classList.remove('eatery-dialog');
+  }
+})
