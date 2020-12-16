@@ -34,7 +34,7 @@ eventHub.addEventListener("eaterySelect", () => {
     }
 
     eventHub.addEventListener('click', (clickEvent)=> {
-      if (!clickEvent.target.id.startsWith('eateryDetailButton--')) {
+      if (!clickEvent.target.id.startsWith('eateries--')) {
         return;
       }
       const [unused, eateryId] = clickEvent.target.id.split('--');
