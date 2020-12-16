@@ -8,13 +8,16 @@ export const ParkDetailsHTMLgenerator = (park) => {
 
   return `
   <div class="park-details">
+  <div class="park-details__closeButtonContainer">
+  <button id="closeModal">Close</button>
+  </div>
     <h2>${park.fullName}</h2>
     <p class="park-details__location bold">${park.addresses[0].city}, ${park.addresses[0].stateCode}</p>
     <p class="park-details__description">${park.description}</p>
     <div class="park-details__subcontainer">
     <div class="park-details__activities">
     <h4>Activities: </h4>
-    <div>
+    <div class="park-details__activitiesList">
       ${park.activities.map((activity)=>{
         return `<p>${activity.name}</p>`
       }).join('')}
@@ -32,9 +35,6 @@ export const ParkDetailsHTMLgenerator = (park) => {
       <img src="${park.images[imageNumber].url}" alt="${park.images[imageNumber].altText}">
     </div>
     </div>
-    </div>
-    <div class="park-details__closeButtonContainer">
-    <button id="closeModal">Close</button>
     </div>
   </div>
   `
