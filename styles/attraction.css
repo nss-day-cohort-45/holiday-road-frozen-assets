@@ -36,3 +36,8 @@
 .attraction-details__ameneties, .attraction-details__amenitiesSouvenirs, .attraction-details__amenitiesRestrooms {
   text-align: center;
 }
+
+.attraction-details__closeButtonContainer {
+  text-align: center;
+  margin-top: 20px;
+}
