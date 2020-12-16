@@ -8,6 +8,9 @@ export const ParkDetailsHTMLgenerator = (park) => {
 
   return `
   <div class="park-details">
+  <div class="park-details__closeButtonContainer">
+  <button id="closeModal">Close</button>
+  </div>
     <h2>${park.fullName}</h2>
     <p class="park-details__location bold">${park.addresses[0].city}, ${park.addresses[0].stateCode}</p>
     <p class="park-details__description">${park.description}</p>
@@ -32,9 +35,6 @@ export const ParkDetailsHTMLgenerator = (park) => {
       <img src="${park.images[imageNumber].url}" alt="${park.images[imageNumber].altText}">
     </div>
     </div>
-    </div>
-    <div class="park-details__closeButtonContainer">
-    <button id="closeModal">Close</button>
     </div>
   </div>
   `

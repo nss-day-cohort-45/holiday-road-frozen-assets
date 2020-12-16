@@ -41,9 +41,9 @@
 .park-dialog {
   width: 70%;
   position: fixed;
-  top: 10%;
-  max-height: 95vh;
-  overflow-y: scroll;
+  top: 5%;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .park-details h2 {
@@ -87,7 +87,7 @@
 
 .park-details__closeButtonContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .park-details__image img {
