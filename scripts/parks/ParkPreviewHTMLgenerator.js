@@ -25,11 +25,14 @@ export const ParkPreviewHTMLgenerator = (park) => {
       let img = date.weather[0].icon;
 
       return `<div class="weather-card">
+      <div class="weather-details">
       <p>${humanDate}</p>
       <p>Hi: ${high}&deg; F</p>
       <p>Lo: ${low}&deg; F</p>
-      <p>${desc}</p>
+      </div>
+      <div class="weather-image">
       <img src="http://openweathermap.org/img/wn/${img}@2x.png">
+      </div>
       </div>`;
     });
     return weatherOutputArray.join('');
@@ -37,18 +40,19 @@ export const ParkPreviewHTMLgenerator = (park) => {
 
   parkPreviewHTML = `
     <div class="preview-card preview-card--park">
-    <div class="preview-card--park__info">
-      <input type="hidden" id="selectedPark" value="${park.id}">
-      <h4>
-        ${park.fullName}
-      </h4>
-      <p class="bold">${park.addresses[0].city}, ${park.addresses[0].stateCode}
-    </p>
-    <div class="park-weather">
-    ${weatherFunction()}
-    </div>
-    </div>
-    <div class="detailButton">
+      <div class="preview-card--park__info">
+        <input type="hidden" id="selectedPark" value="${park.id}">
+        <div class="park-info__nameAndLocation">
+          <h4>
+            ${park.fullName}
+          </h4>
+          <p class="bold">${park.addresses[0].city}, ${park.addresses[0].stateCode}</p>
+        </div>
+      </div>
+      <div class="park-weather">
+        ${weatherFunction()}
+      </div>
+      <div class="detailButton">
         <button class="parkDetails" id="parkDetailButton--${
           park.id
         }">Details</button>

@@ -2,9 +2,13 @@ export const EateryHTMLConverter = (eatery) => {
     return `
         <section class="eatery-info">
         <input type="hidden" id="selectedEatery" value="${eatery.id}">
-        <div class="eatery__name">${eatery.businessName}</div>
-        <div class="eatery__location">Located in ${eatery.city}, ${eatery.state}</div>
+        <div class="eatery-nameAndLocation">
+        <h4 class="eatery__name">${eatery.businessName}</h4>
+        <div class="eatery__location bold">${eatery.city}, ${eatery.state}</div>
+        </div>
+        <div class="detailButton">
         <button id="eateries--${eatery.id}">Details</button>
+        </div>
         </section>`
 }
 

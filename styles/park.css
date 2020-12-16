@@ -1,12 +1,14 @@
 .preview-card--park {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 20px 0;
   border: 1px solid black;
 }
 
 .preview-card--park__info {
   margin-left: 20px;
+  display: flex;
 }
 
 .parkDetails {
@@ -15,18 +17,25 @@
 
 .park-weather {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .weather-card {
   border-radius: 5px;
-  padding: 0.25em 0.33em 0;
-  margin: 0 0.5em 0.5em 0;
+  padding: 2px 3px 0;
+  margin: 0.5em;
+  font-size: 12px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #000;
   background-color: #999;
+}
+
+.weather-card img {
+  max-width: 70px;
 }
 
 .park-dialog {
