@@ -42,6 +42,8 @@
   width: 70%;
   position: fixed;
   top: 10%;
+  max-height: 95vh;
+  overflow-y: scroll;
 }
 
 .park-details h2 {
@@ -67,8 +69,8 @@
 .park-details__activitiesList {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 30em;
+  /* flex-wrap: wrap; */
+  /* max-height: 30em; */
 }
 
 .park-details__contact {
