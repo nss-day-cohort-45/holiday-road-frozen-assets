@@ -1,16 +1,28 @@
 export const eateryConverter = (eatery) => {
     return `
-    <div class="eateryContainer">
-        <section class="eatery">
-        <input type="hidden" id="chosenEatery" value="${eatery.id}">
-            <h4 class="eateryName">${ eatery.businessName }</h4>
-            <p class="eateryLocation">${eatery.city}, ${eatery.state}</p>
-        </section>
-        <div class="eateryDetailButton" >
-          <button id="eateryDetailButton--${eatery.id}" class="eateryDetails">Details</button>
+        <section class="eatery-info">
+        <input type="hidden" id="selectedEatery" value="${eatery.id}">
+        <div class="eatery-nameAndLocation">
+        <h4 class="eatery__name">${eatery.businessName}</h4>
+        <div class="eatery__location bold">${eatery.city}, ${eatery.state}</div>
         </div>
-    </div>
-    `
-  }
-  
-  
+        <div class="detailButton">
+        <button id="eateries--${eatery.id}">Details</button>
+        </div>
+        </section>`
+}
+
+const eventHub = document.querySelector(".preview--eatery")
+
+eventHub.addEventListener("click", clickEatery => {
+    const [splitId, indexOne] = clickEatery.target.id.split("--")
+
+    if ("eateries" === splitId) {
+        const customEventEatery = new CustomEvent("showDetailsClicked", {
+            detail: {
+                eateryThatWasChosen: indexOne
+            }
+        })
+        eventHub.dispatchEvent(customEventEatery)
+    }
+})

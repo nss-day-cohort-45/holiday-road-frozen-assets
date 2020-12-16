@@ -4,7 +4,7 @@ export const attractionHTMLConverter = (attractionObject) => {
       <section class="attraction">
       <input type="hidden" id="selectedAttraction" value="${attractionObject.id}">
           <h4 class="attractionName">${ attractionObject.name }</h4>
-          <p class="attractionLocation">${attractionObject.city}, ${attractionObject.state}</p>
+          <p class="attractionLocation bold">${attractionObject.city}, ${attractionObject.state}</p>
       </section>
       <div class="detailButton" >
         <button id="attractionDetailButton--${attractionObject.id}" class="attractionDetails">Details</button>
