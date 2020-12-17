@@ -66,6 +66,15 @@ select {
   display: none;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.ml {
+  margin-left: 0.75em;
+}
+
 .lightbg {
   background-color: #999999;
   border-radius: 10px;
