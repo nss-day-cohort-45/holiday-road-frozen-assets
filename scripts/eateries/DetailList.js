@@ -1,4 +1,4 @@
-import { EateryDetailsConverter, yesOrNo } from './DetailsConverter.js';
+import { EateryDetailsConverter } from './DetailsConverter.js';
 import { useEateries } from './EateryProvider.js';
 
 const eventHub = document.querySelector('.container');
@@ -9,7 +9,6 @@ eventHub.addEventListener('eateryDetailsClicked', (event) => {
   const eateryDetails = event.detail.eateryId;
   const eateryObject = eateries.find((eatery)=>eatery.id === parseInt(eateryDetails));
   
-  yesOrNo(eateryObject)
   const eateryHTML = EateryDetailsConverter(eateryObject);
   contentTarget.innerHTML = eateryHTML;
   contentTarget.classList.add('eatery-dialog');
