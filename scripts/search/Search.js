@@ -23,7 +23,6 @@ searchBar.addEventListener('keyup', () => {
   const parks = useParks();
   const attractions = useAttractions();
   const eateries = useEateries();
-  console.log(parks);
   let searchInput = searchBar.value.toLowerCase();
   let searchResults = [];
 
