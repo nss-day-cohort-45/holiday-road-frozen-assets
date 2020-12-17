@@ -14,9 +14,9 @@ export const SearchResult = (result) => {
 
     return `
     <div class="attractionContainer lightbg">
-      <section class="attraction">
+      <section class="attraction result">
       <input type="hidden" id="selectedSearchResultId" value="${parkObject.id}">
-          <h4>${parkObject.fullName}</h4>
+          <div><p class="bold">Park - </p><h4>${parkObject.fullName}</h4></div>
           <p class="bold">${parkObject.addresses[0]?.city}, ${parkObject.addresses[0]?.stateCode}</p>
       </section>
       <div class="detailButton" >
@@ -29,9 +29,9 @@ export const SearchResult = (result) => {
 
     return `
     <div class="attractionContainer lightbg">
-      <section class="attraction">
+      <section class="attraction result">
       <input type="hidden" id="selectedSearchResultId" value="${parkObject.id}">
-          <h4>${parkObject.fullName}</h4>
+      <div><p class="bold">Park - </p><h4>${parkObject.fullName}</h4></div>
           <p class="bold">Address Info Unavailable</p>
       </section>
       <div class="detailButton" >
@@ -44,9 +44,9 @@ export const SearchResult = (result) => {
 
     return `
     <div class="attractionContainer lightbg">
-      <section class="attraction">
+      <section class="attraction result">
       <input type="hidden" id="selectedSearchResultId" value="${attractionObject.id}">
-          <h4>${attractionObject.name}</h4>
+      <div><p class="bold">Attraction - </p><h4>${attractionObject.name}</h4></div>
           <p class="bold">${attractionObject.city}, ${attractionObject.state}</p>
       </section>
       <div class="detailButton" >
@@ -59,10 +59,9 @@ export const SearchResult = (result) => {
 
     return `
     <div class="attractionContainer lightbg">
-        <section class="attraction">
-        <input type="hidden" id="selectedSearchResultId" value="${eateryObject.id}">
-  
-            <h4>${eateryObject.businessName}</h4>
+        <section class="attraction result">
+        <input type="hidden" id="selectedSearchResultId" value="${eateryObject.id}">  
+        <div><p class="bold">Eatery - </p><h4>${eateryObject.businessName}</h4></div>
             <p class="bold">${eateryObject.city}, ${eateryObject.state}</p>
         </section>
         <div class="detailButton" >
