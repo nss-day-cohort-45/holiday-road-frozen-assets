@@ -76,6 +76,8 @@ searchBar.addEventListener('keyup', () => {
     } else {
       searchResultsContainer.innerHTML = 'No Results Found'
     }
+  } else {
+    document.querySelector('#searchResultsHeader').classList.add('isHidden');
   }
 });
 
