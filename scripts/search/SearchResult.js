@@ -9,7 +9,7 @@ export const SearchResult = (result) => {
   let attractions = useAttractions();
   let eateries = useEateries();
 
-  if (result.type === 'park') {
+  if (result.type === 'park' && result.city) {
     let parkObject = parks.find((p) => p.id === result.id);
 
     return `
@@ -18,6 +18,21 @@ export const SearchResult = (result) => {
       <input type="hidden" id="selectedSearchResultId" value="${parkObject.id}">
           <h4>${parkObject.fullName}</h4>
           <p class="bold">${parkObject.addresses[0]?.city}, ${parkObject.addresses[0]?.stateCode}</p>
+      </section>
+      <div class="detailButton" >
+        <button id="addToPreviewButtonPark--${parkObject.id}" class="attractionDetails">Add to Preview</button>
+      </div>
+  </div>
+  `;
+  } else if (result.type === 'park' && !result.city) {
+    let parkObject = parks.find((p) => p.id === result.id);
+
+    return `
+    <div class="attractionContainer lightbg">
+      <section class="attraction">
+      <input type="hidden" id="selectedSearchResultId" value="${parkObject.id}">
+          <h4>${parkObject.fullName}</h4>
+          <p class="bold">Address Info Unavailable</p>
       </section>
       <div class="detailButton" >
         <button id="addToPreviewButtonPark--${parkObject.id}" class="attractionDetails">Add to Preview</button>
