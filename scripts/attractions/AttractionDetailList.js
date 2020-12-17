@@ -21,3 +21,8 @@ eventHub.addEventListener('click', (event)=> {
     targetDialog.classList.remove('attraction-dialog');
   }
 })
+
+window.onclick = function(event) {
+  if (event.target === targetDialog)
+    targetDialog.close();
+}

@@ -21,3 +21,8 @@ eventHub.addEventListener('click', (evt)=> {
     targetDialog.classList.remove('park-dialog');
   }
 })
+
+window.onclick = function(event) {
+  if (event.target === contentTarget)
+    contentTarget.close();
+}

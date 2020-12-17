@@ -3,6 +3,7 @@ button {
   background: #edebdf;
   box-shadow: 0 1px #999;
   transform: scale(0.98);
+  outline: none;
 }
 
 button:hover {
@@ -13,3 +14,7 @@ button:disabled {
   filter: brightness(100%);
 }
 
+button:active {
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
