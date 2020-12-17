@@ -1,3 +1,12 @@
+const yesOrNo = (amenity) => {
+  if (amenity === true) {
+    return "Yes"
+  }
+  else {
+    return "No"
+  }
+}
+
 export const AttractionDetailsHTMLgenerator = (attraction) => {
   return `
   <div class="attraction-details">
@@ -8,8 +17,8 @@ export const AttractionDetailsHTMLgenerator = (attraction) => {
     <p class="attraction-details__location bold">${attraction.city}, ${attraction.state}</p>
     <p class="attraction-details__description">${attraction.description}</p>
     <h4 class="attraction-details__ameneties">Amenities:</h4>
-    <p class="attraction-details__amenitiesSouvenirs">Souvenir Shop: ${attraction.ameneties.souvenirs}</p>
-    <p class="attraction-details__amenitiesRestrooms">Restrooms: ${attraction.ameneties.restrooms}</p>
+    <p class="attraction-details__amenitiesSouvenirs">Souvenir Shop: ${yesOrNo(attraction.ameneties.souvenirs)}</p>
+    <p class="attraction-details__amenitiesRestrooms">Restrooms: ${yesOrNo(attraction.ameneties.restrooms)}</p>
   </div>
   `
 }
