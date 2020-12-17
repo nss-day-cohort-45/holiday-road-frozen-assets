@@ -1,3 +1,12 @@
+const yesOrNo = (eatery) => {
+  if (eatery.ameneties.wheelchairAccessible === true) {
+    return eatery.ameneties.wheelchairAccessible = "Yes"
+  }
+  else if (eatery.ameneties.wheelchairAccessible === false) {
+    return eatery.ameneties.wheelchairAccessible = "No"
+  }
+}
+
 export const EateryDetailsConverter = (eatery) => {
     return `
     <h2 class="eateryName">${eatery.businessName}</h2>
