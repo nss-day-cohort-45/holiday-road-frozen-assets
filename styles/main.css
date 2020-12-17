@@ -178,3 +178,12 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.result div {
+  display: flex;
+  align-items: center;
+}
+
+.result div p {
+  margin-right: 0.5em;
+}
