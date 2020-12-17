@@ -21,3 +21,8 @@ eventHub.addEventListener('click', (event)=> {
     contentTarget.classList.remove('eatery-dialog');
   }
 })
+
+window.onclick = function(event) {
+  if (event.target === contentTarget)
+    contentTarget.close();
+}
