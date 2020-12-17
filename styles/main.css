@@ -180,5 +180,12 @@ body {
   justify-content: space-around;
 }
 
+.result div {
+  display: flex;
+  align-items: center;
+}
 
+.result div p {
+  margin-right: 0.5em;
+}
 
