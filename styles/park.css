@@ -47,11 +47,13 @@
 }
 
 .park-details h2 {
-  text-align: center;
+  text-align: left;
+  width: 85%;  
+  margin: 0 auto;
 }
 
 .park-details__location {
-  text-align: center;
+  text-align: left;
 }
 
 .park-details__location,
