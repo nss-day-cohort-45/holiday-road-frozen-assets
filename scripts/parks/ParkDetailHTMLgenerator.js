@@ -11,8 +11,10 @@ export const ParkDetailsHTMLgenerator = (park) => {
   <div class="park-details__closeButtonContainer">
   <button id="closeModal">Close</button>
   </div>
+  <div class="park-details__nameAndLocation">
     <h2>${park.fullName}</h2>
     <p class="park-details__location bold">${park.addresses[0].city}, ${park.addresses[0].stateCode}</p>
+  </div>
     <p class="park-details__description">${park.description}</p>
     <div class="park-details__subcontainer">
     <div class="park-details__activities">
