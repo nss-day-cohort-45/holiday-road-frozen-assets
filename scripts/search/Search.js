@@ -20,6 +20,7 @@ hidePreview.addEventListener('click', (clickEvent) => {
 });
 
 searchBar.addEventListener('keyup', () => {
+  document.querySelector('#searchResultsHeader').classList.remove('isHidden');
   const parks = useParks();
   const attractions = useAttractions();
   const eateries = useEateries();
@@ -68,14 +69,19 @@ searchBar.addEventListener('keyup', () => {
         item.city?.includes(searchInput) ||
         item.state?.includes(searchInput)
     );
-    searchResultsContainer.innerHTML = searchResults
-      .map((result) => SearchResult(result))
-      .join('');
+    if (searchResults.length>0){
+      searchResultsContainer.innerHTML = searchResults
+        .map((result) => SearchResult(result))
+        .join('');
+    } else {
+      searchResultsContainer.innerHTML = 'No Results Found'
+    }
   }
 });
 
 searchBar.addEventListener('input', () => {
   if (searchBar.value === '') {
+    document.querySelector('#searchResultsHeader').classList.add('isHidden');
     searchResultsContainer.innerHTML = '';
   }
 });
