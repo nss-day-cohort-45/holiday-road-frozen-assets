@@ -102,13 +102,13 @@ h4 {
 
 /* colors */
 body {
-  background-color: var(--primary-bg-color);
+  background-color: var(--secondary-bg-color);
   color: var(--primary-font-color);
 }
 
 /* structure & styling */
 .container {
-  margin-left: 1em;
+  width: 100%;
 }
 
 .header {
@@ -132,16 +132,23 @@ body {
 }
 
 .search-bar input {
-  width: 20em;
+  min-width: 15em;
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--secondary-bg-color);
 }
 
 .content__main {
-  margin: 0 auto;
+  border-radius: 2em;
+  border-right: 3px solid rgb(109, 94, 30);
+  background-color: var(--primary-bg-color);
+  width: 80%;
+  padding: 0 1em;
+  margin-left: 1em;
 }
 
 .dropdowns {
