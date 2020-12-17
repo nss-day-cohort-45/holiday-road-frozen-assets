@@ -20,6 +20,7 @@ eventHub.addEventListener('parkChosen', (event) => {
     } else {
       parkPreviewTarget.innerHTML = ParkPreviewHTMLgenerator(chosenPark);
     }
+
   } else parkPreviewTarget.innerHTML = '';
 });
 
