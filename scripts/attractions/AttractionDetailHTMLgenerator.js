@@ -1,9 +1,9 @@
 const yesOrNo = (amenity) => {
   if (amenity === true) {
-    return "Yes"
+    return document.innerHTML = '<image src="./images/boolean-yes.png" alt="Yes">'
   }
   else {
-    return "No"
+    return document.innerHTML = '<image src="./images/boolean-no.png" alt="No">'
   }
 }
 
