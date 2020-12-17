@@ -25,6 +25,7 @@ searchBar.addEventListener('keyup', () => {
   const attractions = useAttractions();
   const eateries = useEateries();
   let searchInput = searchBar.value.toLowerCase();
+  let searchInputArray = searchInput.split(' ');
   let searchResults = [];
 
   let shitToSearchThru = [];
@@ -63,19 +64,25 @@ searchBar.addEventListener('keyup', () => {
   });
 
   if (searchInput !== '') {
-    searchResults = shitToSearchThru.filter(
-      (item) =>
-        item.name.includes(searchInput) ||
-        item.city?.includes(searchInput) ||
-        item.state?.includes(searchInput)
+
+    searchResults = shitToSearchThru.filter((obj) =>
+      searchInputArray.every(
+        (term) =>
+          obj.name.includes(term) ||
+          obj.city?.includes(term) ||
+          obj.state?.includes(term)
+      )
     );
-    if (searchResults.length>0){
+
+    if (searchResults.length > 0) {
       searchResultsContainer.innerHTML = searchResults
         .map((result) => SearchResult(result))
         .join('');
     } else {
-      searchResultsContainer.innerHTML = 'No Results Found'
+      searchResultsContainer.innerHTML = 'No Results Found';
     }
+  } else {
+    document.querySelector('#searchResultsHeader').classList.add('isHidden');
   }
 });
 
