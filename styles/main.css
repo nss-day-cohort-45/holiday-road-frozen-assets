@@ -3,6 +3,7 @@
 @import './park.css';
 @import './eatery.css';
 @import './itineraries.css';
+@import './footer.css';
 
 /* variables */
  
@@ -64,6 +65,11 @@ select {
   display: none;
 }
 
+.lightbg {
+  background-color: #999999;
+  border-radius: 10px;
+}
+
 /* typography */
 h1,
 h2,
@@ -115,6 +121,17 @@ body {
 
 .logo img {
   max-height: 170px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+
+.search-bar input {
+  width: 20em;
 }
 
 .content {

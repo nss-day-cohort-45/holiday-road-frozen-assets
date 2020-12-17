@@ -31,16 +31,24 @@
             <dialog class="dialog-container"></dialog>
             <div class="button-container">
               <button id="saveItinerary" disabled>Save Itinerary</button>
+              <button id="hidePreviews">Hide Previews</button>
             </div>
           </div>
+          <div class="searchResults"></div>
         </div>
         <aside class="content__saved-itineraries">
-          <h4><u>Saved Itineraries:</u></h4>
+          <div class="search-bar">
+            <h4>
+              <label for="searchInput">Search Destinations:</label>
+            </h4>
+            <input type="search" name="searchInput" id="searchInput" placeholder="Search for name or location..." autocomplete="off">
+          </div>
+          <h3><u>Saved Itineraries:</u></h3>
           <div class="content__saved-itineraries-content"></div>
         </aside>
       </section>
-      <footer class="footer">
-        <div class="copyright-info"></div>
+      <footer class="footer__copyright_info">
+        <small>&copy; Copyright 2020, Curse of Hotdog Man</small>
       </footer>
     </main>
     <script src="scripts/main.js" type="module"></script>

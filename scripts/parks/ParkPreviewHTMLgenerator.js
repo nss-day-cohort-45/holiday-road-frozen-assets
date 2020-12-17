@@ -44,28 +44,53 @@ export const ParkPreviewHTMLgenerator = (park) => {
     }
   };
 
-  parkPreviewHTML = `
-    <div class="preview-card preview-card--park">
-      <div class="preview-card--park__info">
-        <input type="hidden" id="selectedPark" value="${park.id}">
-        <div class="park-info__nameAndLocation">
-          <h4>
-            ${park.fullName}
-          </h4>
-          <p class="bold">${park.addresses[0].city}, ${
-    park.addresses[0].stateCode
-  }</p>
+  if (park.addresses.length > 0) {
+    parkPreviewHTML = `
+      <div class="preview-card preview-card--park">
+        <div class="preview-card--park__info">
+          <input type="hidden" id="selectedPark" value="${park.id}">
+          <div class="park-info__nameAndLocation">
+            <h4>
+              ${park.fullName}
+            </h4>
+            <p class="bold">${park.addresses[0].city}, ${
+      park.addresses[0].stateCode
+    }</p>
+          </div>
+        </div>
+        <div class="park-weather">
+          ${weatherDisplay(park.latitude, park.longitude)}
+        </div>
+        <div class="detailButton">
+          <button class="parkDetails" id="parkDetailButton--${
+            park.id
+          }">Details</button>
         </div>
       </div>
-      <div class="park-weather">
-        ${weatherDisplay(park.latitude, park.longitude)}
-      </div>
-      <div class="detailButton">
-        <button class="parkDetails" id="parkDetailButton--${
-          park.id
-        }">Details</button>
-      </div>
+      `;
+    return parkPreviewHTML;
+  } else {
+    parkPreviewHTML = `
+    <div class="preview-card preview-card--park">
+    <div class="preview-card--park__info">
+    <input type="hidden" id="selectedPark" value="${park.id}">
+    <div class="park-info__nameAndLocation">
+    <h4>
+    ${park.fullName}
+    </h4>
+    <p class="bold">Address Info Unavailable</p>
+    </div>
+    </div>
+    <div class="park-weather">
+    ${weatherDisplay(park.latitude, park.longitude)}
+    </div>
+    <div class="detailButton">
+    <button class="parkDetails" id="parkDetailButton--${
+      park.id
+    }">Details</button>
+    </div>
     </div>
     `;
-  return parkPreviewHTML;
+    return parkPreviewHTML;
+  }
 };

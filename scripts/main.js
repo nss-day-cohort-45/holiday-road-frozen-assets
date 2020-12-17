@@ -9,6 +9,7 @@ import './parks/ParkDetailList.js';
 import "./eateries/EateryPreviewList.js"
 import "./eateries/DetailList.js"
 import "./attractions/AttractionDetailList.js"
+import './search/Search.js';
 
 attractionSelect();
 parkSelect();
