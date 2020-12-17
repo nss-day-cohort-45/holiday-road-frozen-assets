@@ -11,6 +11,5 @@ export const getParks = () => {
     .then((res) => res.json())
     .then((parsedParks) => {
       parks = parsedParks.data;
-      console.log(parks);
     });
 };

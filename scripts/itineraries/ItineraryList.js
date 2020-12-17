@@ -21,7 +21,6 @@ const render = (itineraryCollection) => {
       const parkObject = getParkObject(itinerary)
       const attractionObject = getAttractionObject(itinerary)
       const eateryObject = getEateryObject(itinerary)
-      console.log(parkObject, attractionObject, eateryObject)
       const html = itineraryHTMLConverter(parkObject, attractionObject, eateryObject)
       return html
     }).join("")
