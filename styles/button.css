@@ -1,0 +1,15 @@
+button {
+  border-radius: 4px;
+  background: #edebdf;
+  box-shadow: 0 1px #999;
+  transform: scale(0.98);
+}
+
+button:hover {
+  filter: brightness(85%);
+}
+
+button:disabled {
+  filter: brightness(100%);
+}
+

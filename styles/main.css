@@ -4,6 +4,7 @@
 @import './eatery.css';
 @import './itineraries.css';
 @import './footer.css';
+@import './button.css';
 
 /* variables */
  
@@ -171,3 +172,6 @@ body {
   display: flex;
   justify-content: center;
 }
+
+
+
