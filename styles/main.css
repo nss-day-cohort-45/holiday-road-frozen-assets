@@ -115,6 +115,10 @@ body {
   color: var(--primary-font-color);
 }
 
+dialog::backdrop {
+  background-color: #000000aa;
+}
+
 /* structure & styling */
 .container {
   width: 100%;
@@ -131,6 +135,13 @@ body {
 
 .logo img {
   max-height: 170px;
+}
+
+.color-changer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 .search-bar {

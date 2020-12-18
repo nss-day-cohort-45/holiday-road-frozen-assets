@@ -10,6 +10,7 @@ import "./eateries/EateryPreviewList.js"
 import "./eateries/DetailList.js"
 import "./attractions/AttractionDetailList.js"
 import './search/Search.js';
+import './Color.js'
 
 attractionSelect();
 parkSelect();
